@@ -1,4 +1,4 @@
-name = "rss-worker"
+name = "hackhtu-rss"
 main = "src/worker.js"
 compatibility_date = "2023-09-22"
 compatibility_flags = [ "nodejs_compat_v2" ]
