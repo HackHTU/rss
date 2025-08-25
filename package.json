@@ -10,6 +10,7 @@
 		"postinstall": "patch-package"
 	},
 	"devDependencies": {
+		"@esbuild-plugins/node-modules-polyfill": "^0.2.2",
 		"wrangler": "^4.32.0"
 	},
 	"dependencies": {
