@@ -19,7 +19,7 @@
 ### 首页新闻
 
 河南师范大学首页列出的新闻信息，并能够获取来自本站的部分全文。
-`/rss/www/:category`
+`/rss/htu/www/:category`
 | 实例名称 | 对应分类 ID | 有无图片 |
 | -------- | ----------- | -------- |
 | 师大要闻 | 8954 | 有 |
@@ -35,7 +35,7 @@
 ### 教务处新闻
 
 河南师范大学教务处列出的新闻信息，并能够获取来自本站的部分全文。
-`/rss/teaching/:category`
+`/rss/htu//teaching/:category`
 | 名称 | 对应分类 ID |
 | -------- | ----------- |
 | 教学新闻 | 3257 |
@@ -49,5 +49,10 @@
 ## 致谢与改版说明
 
 - 原始项目：本项目基于 yllhwa 的 [RSSWorker](https://github.com/yllhwa/RSSWorker) 改版与本地化开发，删减了一些 Router，更新了依赖等，在此感谢原项目。
-
 - 致谢：感谢原始作者 yllhwa 及其贡献者提供的基础项目；同时感谢开源社区如 [RSSHub](https://github.com/DIYgod/RSSHub) 提供灵感与参考。
+
+
+## TODO
+
+- [ ] 保留 HTML 格式，解析图片，文件等媒体文件
+- [ ] 新增仓库，使用 TypeScript, Hono, Feedsmith 重构，并增加多 RSS Feed 合并，AI 总结功能
