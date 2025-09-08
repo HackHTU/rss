@@ -2,6 +2,7 @@
  * 官网新闻 rss
  */
 /// <reference path="../../../worker-configuration.d.ts" />
+import { cleanedHTML } from '../../utils/cleaned';
 import { parseDate } from '../../utils/parse-date';
 import { renderRss2 } from '../../utils/util';
 import { load } from 'cheerio';
@@ -77,11 +78,10 @@ let deal = async (ctx) => {
 				const $a = load(responseText);
 
 				const readEl = $a('div.read').first();
-				const html = readEl.length ? readEl.text() : null;
-				const text = html || readEl.text();
+				const html = readEl.length ? readEl.html() : null;
 
-				if (text) {
-					item.description = text;
+				if (html) {
+					item.description = cleanedHTML(html);
 				}
 
 				if (!item.enclosure) {
