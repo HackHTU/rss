@@ -96,7 +96,7 @@ let deal = async (ctx) => {
 				console.error(error);
 				return item;
 			}
-		})
+		}),
 	);
 
 	const channel = $('title').text();
