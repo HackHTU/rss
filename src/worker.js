@@ -37,6 +37,16 @@ app.onError((err, c) => {
 // 		password: 'password',
 // 	})
 // );
-app.use('/*', cors());
+app.use(
+	'/*',
+	cors({
+		origin: '*', 
+		allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+		allowHeaders: ['Content-Type', 'Authorization'], 
+		exposeHeaders: ['Content-Length', 'X-Requested-With'], 
+		maxAge: 600, 
+		credentials: true,
+	})
+);
 
 export default app;
