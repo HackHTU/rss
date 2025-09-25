@@ -10,6 +10,20 @@ import route from './route';
 
 const app = new Hono();
 
+// app.use(
+// 	'/*',
+// 	basicAuth({
+// 		username: 'user',
+// 		password: 'password',
+// 	})
+// );
+app.use('/*', cors({
+  origin: '*',
+  allowMethods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowHeaders: ['Content-Type','Authorization'],
+  maxAge: 600,
+}));
+
 app.route('/rss', route);
 app.get('/', (ctx) => {
 	return ctx.html(indexHtml);
@@ -30,18 +44,5 @@ app.onError((err, c) => {
 	result = result.replace('{ERROR_STACK}', `${stack_arr}`);
 	return c.html(result, 500);
 });
-// app.use(
-// 	'/*',
-// 	basicAuth({
-// 		username: 'user',
-// 		password: 'password',
-// 	})
-// );
-app.use('/*', cors({
-  origin: '*',
-  allowMethods: ['GET','POST','PUT','DELETE','OPTIONS'],
-  allowHeaders: ['Content-Type','Authorization'],
-  maxAge: 600,
-}));
 
 export default app;
